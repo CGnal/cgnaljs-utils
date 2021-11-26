@@ -3,6 +3,41 @@
 [![NPM version](https://img.shields.io/npm/v/@cgnal/utils.svg)](https://www.npmjs.com/package/@cgnal/utils) [![Checks Status](https://github.com/CGnal/cgnaljs-utils/actions/workflows/checks.yml/badge.svg)](https://github.com/CGnal/cgnaljs-utils/actions/workflows/checks.yml) [![Coveralls Status](https://img.shields.io/coveralls/CGnal/cgnaljs-utils/master.svg)](https://coveralls.io/github/CGnal/cgnaljs-utils)
 
 Common utilities for [CGnal](https://cgnal.com)'s JavaScript projects.
+Basic functions to manipulate data, mostly based on [Lamb](https://github.com/ascartabelli/lamb/)'s toolset.
+
+
+## Documentation.
+
+The API documentation is published [here](https://cgnal.github.io/cgnaljs-utils/).
+
+## Installation and usage
+
+```bash
+npm install @cgnal/utils --save
+```
+
+The library doesn't come with a predefined build, but rather relies on the application that uses it to "set the rules".
+
+[`@babel/runtime-corejs3`](https://github.com/babel/babel/tree/main/packages/babel-runtime-corejs3) and [`core-js`](https://github.com/zloirock/core-js) are set as dependencies, so you can make your application build it for your intended targets and eventually add automatically the necessary polyfills.
+
+Example of possible babel configuration:
+
+```javascript
+// ...
+
+"presets": [
+    ["@babel/preset-env", {
+        "corejs": "3.19",
+        "modules": "auto",
+        "useBuiltIns": "usage"
+    }]
+],
+"plugins": [
+    ["@babel/plugin-transform-runtime", { "corejs": 3, "proposals": true }],
+]
+
+// ...
+```
 
 ## NPM scripts and Gulp tasks
 

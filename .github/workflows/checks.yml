@@ -1,9 +1,30 @@
 name: checks
 
-on: ["push", "pull_request"]
+on: [push, pull_request]
 
 jobs:
-  lint-coverage:
+  coverage:
+
+    runs-on: ubuntu-latest
+
+    name: Coveralls code coverage
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Installing dev dependencies
+        run: npm ci
+
+      - name: Test and collect coverage
+        run: npm run coverage
+
+      - name: Send coverage to coveralls.io
+        uses: coverallsapp/github-action@1.1.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  lint-test:
 
     runs-on: ubuntu-latest
 
@@ -25,10 +46,3 @@ jobs:
 
       - name: Test and collect coverage
         run: npm run coverage
-
-      - name: Send coverage to coveralls.io
-        uses: coverallsapp/github-action@1.1.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          flag-name: run-${{ matrix.test_number }}
-          parallel: true
