@@ -154,6 +154,11 @@ h4.name a:hover {
     color: #008dc2;
 }
 
+.signature-attributes {
+    color: #369;
+    font-weight: bold;
+}
+
 .prettyprint {
     overflow-y: hidden;
 }
