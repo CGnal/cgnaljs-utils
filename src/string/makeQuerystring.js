@@ -6,7 +6,16 @@ const makeEncodedPair = _.compose(
 );
 
 /**
- * Builds a querystring from a plain object.
+ * Builds a querystring from a plain object. {@link Undefined} keys will be skipped.
+ * @example
+ * const song = {
+ *     author: "Jethro Tull",
+ *     name: "Bourée",
+ *     year: undefined
+ * };
+ *
+ * makeQuerystring(song) // => "author=Jethro%20Tull&name=Bour%C3%A9e"
+ *
  * @memberof module:@cgnal/utils/string
  * @since 0.0.2
  * @function

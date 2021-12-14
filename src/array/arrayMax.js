@@ -1,5 +1,8 @@
 /**
  * Gets the max value in an array of numbers.
+ * @example
+ * arrayMax([4, 5, 2, 3, 1]) // => 5
+ *
  * @memberof module:@cgnal/utils/array
  * @since 0.0.5
  * @function

@@ -1,5 +1,8 @@
 /**
  * Gets the min value in an array of numbers.
+ * @example
+ * arrayMin([4, 5, 2, 3, 1]) // => 1
+ *
  * @memberof module:@cgnal/utils/array
  * @since 0.0.5
  * @function
