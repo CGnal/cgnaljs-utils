@@ -179,7 +179,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_arrayMax.js.html">src/array/arrayMax.js</a>, <a href="src_array_arrayMax.js.html#line9">line 9</a>
+        <a href="src_array_arrayMax.js.html">src/array/arrayMax.js</a>, <a href="src_array_arrayMax.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -231,6 +231,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>arrayMax([4, 5, 2, 3, 1]) // => 5</code></pre>
 
 
 
@@ -336,7 +341,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_arrayMaxByKey.js.html">src/array/arrayMaxByKey.js</a>, <a href="src_array_arrayMaxByKey.js.html#line13">line 13</a>
+        <a href="src_array_arrayMaxByKey.js.html">src/array/arrayMaxByKey.js</a>, <a href="src_array_arrayMaxByKey.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -388,6 +393,18 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const scores = [
+    { score: 7, user: "John" },
+    { score: 9, user: "Jane" },
+    { score: 5, user: "Mario" }
+];
+const getMaxScore = arrayMaxByKey("score");
+
+getMaxScore(scores) // => 9</code></pre>
 
 
 
@@ -497,7 +514,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_arrayMin.js.html">src/array/arrayMin.js</a>, <a href="src_array_arrayMin.js.html#line9">line 9</a>
+        <a href="src_array_arrayMin.js.html">src/array/arrayMin.js</a>, <a href="src_array_arrayMin.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -549,6 +566,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>arrayMin([4, 5, 2, 3, 1]) // => 1</code></pre>
 
 
 
@@ -654,7 +676,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_arrayMinByKey.js.html">src/array/arrayMinByKey.js</a>, <a href="src_array_arrayMinByKey.js.html#line13">line 13</a>
+        <a href="src_array_arrayMinByKey.js.html">src/array/arrayMinByKey.js</a>, <a href="src_array_arrayMinByKey.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -706,6 +728,18 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const scores = [
+    { score: 7, user: "John" },
+    { score: 9, user: "Jane" },
+    { score: 5, user: "Mario" }
+];
+const getMinScore = arrayMinByKey("score");
+
+getMinScore(scores) // => 5</code></pre>
 
 
 
@@ -815,7 +849,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_arraySum.js.html">src/array/arraySum.js</a>, <a href="src_array_arraySum.js.html#line11">line 11</a>
+        <a href="src_array_arraySum.js.html">src/array/arraySum.js</a>, <a href="src_array_arraySum.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -867,6 +901,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>arraySum([1, 2, 3, 4, 5]) // => 15</code></pre>
 
 
 
@@ -972,7 +1011,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_arraySumByKey.js.html">src/array/arraySumByKey.js</a>, <a href="src_array_arraySumByKey.js.html#line13">line 13</a>
+        <a href="src_array_arraySumByKey.js.html">src/array/arraySumByKey.js</a>, <a href="src_array_arraySumByKey.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -1024,6 +1063,18 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const scores = [
+    { score: 7, user: "John" },
+    { score: 9, user: "Jane" },
+    { score: 5, user: "Mario" }
+];
+const sumScores = arraySumByKey("score");
+
+sumScores(scores) // => 21</code></pre>
 
 
 
@@ -1133,7 +1184,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_countByKey.js.html">src/array/countByKey.js</a>, <a href="src_array_countByKey.js.html#line12">line 12</a>
+        <a href="src_array_countByKey.js.html">src/array/countByKey.js</a>, <a href="src_array_countByKey.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -1186,6 +1237,19 @@ of the given key in the source objects and as values the count of matches for th
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const persons = [
+    { name: "Jane", city: "New York" },
+    { name: "John", city: "New York" },
+    { name: "Mario", city: "Rome" },
+    { name: "Paolo" }
+];
+const countByCity = countByKey("city");
+
+countByCity(persons) // => { "New York": 2, "Rome": 1, "undefined": 1 }</code></pre>
 
 
 
@@ -1295,7 +1359,7 @@ of the given key in the source objects and as values the count of matches for th
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_getMinAndMax.js.html">src/array/getMinAndMax.js</a>, <a href="src_array_getMinAndMax.js.html#line14">line 14</a>
+        <a href="src_array_getMinAndMax.js.html">src/array/getMinAndMax.js</a>, <a href="src_array_getMinAndMax.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -1347,6 +1411,11 @@ of the given key in the source objects and as values the count of matches for th
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>getMinAndMax([4, 5, 2, 3, 1]) // => [1, 5]</code></pre>
 
 
 
@@ -1448,7 +1517,7 @@ of the given key in the source objects and as values the count of matches for th
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_getMinAndMaxFromKey.js.html">src/array/getMinAndMaxFromKey.js</a>, <a href="src_array_getMinAndMaxFromKey.js.html#line13">line 13</a>
+        <a href="src_array_getMinAndMaxFromKey.js.html">src/array/getMinAndMaxFromKey.js</a>, <a href="src_array_getMinAndMaxFromKey.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -1500,6 +1569,18 @@ of the given key in the source objects and as values the count of matches for th
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const scores = [
+    { score: 7, user: "John" },
+    { score: 9, user: "Jane" },
+    { score: 5, user: "Mario" }
+];
+const getMinAndMaxScore = getMinAndMaxFromKey("score");
+
+getMinAndMaxScore(scores) // => [5, 9]</code></pre>
 
 
 
@@ -1609,7 +1690,7 @@ of the given key in the source objects and as values the count of matches for th
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_groupByKey.js.html">src/array/groupByKey.js</a>, <a href="src_array_groupByKey.js.html#line11">line 11</a>
+        <a href="src_array_groupByKey.js.html">src/array/groupByKey.js</a>, <a href="src_array_groupByKey.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -1661,6 +1742,31 @@ of the given key in the source objects and as values the count of matches for th
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const persons = [
+    { name: "Jane", city: "New York" },
+    { name: "John", city: "New York" },
+    { name: "Mario", city: "Rome" },
+    { name: "Paolo" }
+];
+const groupByCity = groupByKey("city");
+
+groupByCity(persons) // =>
+// {
+//    "New York": [
+//       { "name": "Jane", "city": "New York" },
+//       { "name": "John", "city": "New York" }
+//   ],
+//   "Rome": [
+//       { "name": "Mario", "city": "Rome" }
+//   ],
+//   "undefined": [
+//       { "name": "Paolo" }
+//   ]
+// }</code></pre>
 
 
 
@@ -1770,7 +1876,7 @@ of the given key in the source objects and as values the count of matches for th
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_indexByKey.js.html">src/array/indexByKey.js</a>, <a href="src_array_indexByKey.js.html#line11">line 11</a>
+        <a href="src_array_indexByKey.js.html">src/array/indexByKey.js</a>, <a href="src_array_indexByKey.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -1822,6 +1928,23 @@ of the given key in the source objects and as values the count of matches for th
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const users = [
+    {id: 1, name: "John"},
+    {id: 2, name: "Jane"},
+    {id: 3, name: "Mario"}
+];
+const indexByID = indexByKey("id");
+
+indexById(users) // =>
+// {
+//     "1": { id: 1, name: "John" },
+//     "2": { id: 2, name: "Jane" },
+//     "3": { id: 3, name: "Mario" }
+// }</code></pre>
 
 
 
@@ -1931,7 +2054,7 @@ of the given key in the source objects and as values the count of matches for th
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_isContainedIn.js.html">src/array/isContainedIn.js</a>, <a href="src_array_isContainedIn.js.html#line15">line 15</a>
+        <a href="src_array_isContainedIn.js.html">src/array/isContainedIn.js</a>, <a href="src_array_isContainedIn.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -1987,6 +2110,17 @@ which performs a &quot;SameValueZero&quot; comparison.</p>
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const values = [2, 5, 3, -0, 1, 4];
+const isInValues = isContainedIn(values);
+
+isInValues(0) // => true
+isInValues(-0) // => true
+isInValues(3) // => true
+isInValues(11) // => false</code></pre>
 
 
 
@@ -2277,7 +2411,7 @@ selectUserInfo(users) // =>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_sortBy.js.html">src/array/sortBy.js</a>, <a href="src_array_sortBy.js.html#line11">line 11</a>
+        <a href="src_array_sortBy.js.html">src/array/sortBy.js</a>, <a href="src_array_sortBy.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -2329,6 +2463,23 @@ selectUserInfo(users) // =>
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const scores = [
+    { score: 7, user: "John" },
+    { score: 9, user: "Jane" },
+    { score: 5, user: "Mario" }
+];
+const sortByScore = sortBy("score");
+
+sortByScore(scores) // =>
+// [
+//     { score: 5, user: "Mario" },
+//     { score: 7, user: "John" },
+//     { score: 9, user: "Jane" }
+// ]</code></pre>
 
 
 
@@ -2438,7 +2589,7 @@ selectUserInfo(users) // =>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_array_sortDescBy.js.html">src/array/sortDescBy.js</a>, <a href="src_array_sortDescBy.js.html#line11">line 11</a>
+        <a href="src_array_sortDescBy.js.html">src/array/sortDescBy.js</a>, <a href="src_array_sortDescBy.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -2490,6 +2641,23 @@ selectUserInfo(users) // =>
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const scores = [
+    { score: 7, user: "John" },
+    { score: 9, user: "Jane" },
+    { score: 5, user: "Mario" }
+];
+const sortDescsByScore = sortDescBy("score");
+
+sortDescsByScore(scores) // =>
+// [
+//     { score: 9, user: "Jane" },
+//     { score: 7, user: "John" },
+//     { score: 5, user: "Mario" }
+// ]</code></pre>
 
 
 
@@ -2602,7 +2770,7 @@ selectUserInfo(users) // =>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Tue Dec 14 2021 09:20:46 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Tue Dec 14 2021 15:24:14 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
