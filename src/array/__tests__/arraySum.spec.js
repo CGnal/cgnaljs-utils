@@ -6,4 +6,8 @@ describe("arraySum", () => {
     it("should sum the values contained in an array of numbers", () => {
         expect(arraySum(testArr)).toBe(15);
     });
+
+    it("should throw an exception if the received array is empty", () => {
+        expect(() => arraySum([])).toThrow(TypeError);
+    });
 });

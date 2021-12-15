@@ -75,6 +75,13 @@
  */
 
 /**
+ * The built-in TypeError object.
+ * @typedef {TypeError} TypeError
+ * @global
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError|TypeError} in Mozilla documentation.
+ */
+
+/**
  * The built-in primitive value <code>undefined</code>
  * @typedef {Undefined} Undefined
  * @global

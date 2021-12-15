@@ -9,6 +9,7 @@ import * as _ from "lamb";
  * @since 0.0.5
  * @function
  * @param {Number[]} source
+ * @throws {TypeError} If the received array is empty.
  * @returns {Number}
  */
 const arraySum = _.reduceWith(_.sum);

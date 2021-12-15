@@ -10,4 +10,8 @@ describe("arraySumByKey", () => {
     it("should sum the numeric values contained in a key in an array of objects", () => {
         expect(arraySumByKey("value")(testArr)).toBe(14);
     });
+
+    it("should throw an exception if the build function receives an empty array", () => {
+        expect(() => arraySumByKey("value")([])).toThrow(TypeError);
+    });
 });

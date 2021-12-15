@@ -3,7 +3,8 @@ import * as _ from "lamb";
 import arraySum from "./arraySum";
 
 /**
- * Sums the values in the given key in an array of objects.
+ * Builds a function that sums the values in the given key in an array of objects.<br/>
+ * The built function will throw a {@link TypeError} if the received array is empty.
  * @example
  * const scores = [
  *     { score: 7, user: "John" },
