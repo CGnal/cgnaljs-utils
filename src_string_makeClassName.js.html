@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>src/string/stripHTMLAttributes.js - @cgnal/utils</title>
+    <title>src/string/makeClassName.js - @cgnal/utils</title>
     
     <meta name="description" content="Common utilities for CGnal's JavaScript projects" />
     
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">src/string/stripHTMLAttributes.js</h1>
+    <h1 class="page-title">src/string/makeClassName.js</h1>
     
 
     
@@ -49,25 +49,46 @@
         <article>
             <pre class="prettyprint source linenums"><code>import * as _ from "lamb";
 
+const makeClassNameFromArray = _.pipe([
+    _.filterWith(Boolean),
+    _.uniques,
+    _.joinWith(" ")
+]);
+
+const makeClassNameFromObject = _.pipe([
+    _.pickIf(Boolean),
+    _.keys,
+    _.joinWith(" ")
+]);
+
 /**
- * Remove all HTML attributes from a string containing HTML.
+ * Utility function to build a CSS class name string.&lt;br/>
+ * The function accepts either an Object or an Array.&lt;br/>
+ * If you pass an object, then it should have the class names as keys. The resulting class names will be
+ * the keys holding "truthy" values.&lt;br/>
+ * "Falsy" values are &lt;code>""&lt;/code>, &lt;code>0&lt;/code>, &lt;code>-0&lt;/code>, &lt;code>false&lt;/code>,
+ * &lt;code>null&lt;/code>, &lt;code>NaN&lt;/code> and &lt;code>undefined&lt;/code>.
  * @example
- * const htmlString = "&lt;p class=\"foo bar\" id=\"main\">Lorem ipsum&lt;/p>";
+ * const obj = { foo: true, bar: false, baz: true };
+ * const arr = ["foo", undefined, "", "foo", "baz"];
  *
- * stripHTMLAttributes(htmlString) // => "&lt;p>Lorem ipsum&lt;/p>"
+ * makeClassName(obj) // => "foo baz"
+ * makeClassName(arr) // => "foo baz"
+ * makeClassName({}) // => ""
+ * makeClassName([]) // => ""
  *
  * @memberof module:@cgnal/utils/string
- * @since 0.0.1
+ * @since 0.1.5
  * @function
- * @param {String} source
+ * @param {String[]|Object&lt;String, Boolean>} names
  * @returns {String}
  */
-const stripHTMLAttributes = _.replace(
-    /&lt;((?:[a-z_]+[\w.-]*:)?(?:[a-z_]+[\w.-]*)+)(?:.*?)(\/?)>/g,
-    "&lt;$1$2>"
-);
+const makeClassName = _.adapter([
+    _.casus(Array.isArray, makeClassNameFromArray),
+    makeClassNameFromObject
+]);
 
-export default stripHTMLAttributes;
+export default makeClassName;
 </code></pre>
         </article>
     </section>
