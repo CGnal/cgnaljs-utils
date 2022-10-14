@@ -40,6 +40,13 @@
  */
 
 /**
+ * The built-in Map object.
+ * @typedef {Map} Map
+ * @global
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map|Map} in Mozilla documentation.
+ */
+
+/**
  * The built-in Number object.
  * @typedef {Number} Number
  * @global

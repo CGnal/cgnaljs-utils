@@ -9,6 +9,7 @@ export { default as arrayMinByKey } from "./arrayMinByKey";
 export { default as arraySum } from "./arraySum";
 export { default as arraySumByKey } from "./arraySumByKey";
 export { default as countByKey } from "./countByKey";
+export { default as countToMapBy } from "./countToMapBy";
 export { default as getMinAndMax } from "./getMinAndMax";
 export { default as getMinAndMaxFromKey } from "./getMinAndMaxFromKey";
 export { default as groupByKey } from "./groupByKey";
