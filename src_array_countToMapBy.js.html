@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>src/string/makeClassName.js - @cgnal/utils</title>
+    <title>src/array/countToMapBy.js - @cgnal/utils</title>
     
     <meta name="description" content="Common utilities for CGnal's JavaScript projects" />
     
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">src/string/makeClassName.js</h1>
+    <h1 class="page-title">src/array/countToMapBy.js</h1>
     
 
     
@@ -47,48 +47,44 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import * as _ from "lamb";
-
-const makeClassNameFromArray = _.pipe([
-    _.filterWith(Boolean),
-    _.uniques,
-    _.joinWith(" ")
-]);
-
-const makeClassNameFromObject = _.pipe([
-    _.pickIf(Boolean),
-    _.keys,
-    _.joinWith(" ")
-]);
-
-/**
- * Utility function to build a CSS class name string.&lt;br/>
- * The function accepts either an Object or an Array.&lt;br/>
- * If you pass an object, then it should have the class names as keys. The resulting class names will be
- * the keys holding "truthy" values.&lt;br/>
- * "Falsy" values are &lt;code>""&lt;/code>, &lt;code>0&lt;/code>, &lt;code>-0&lt;/code>, &lt;code>false&lt;/code>,
- * &lt;code>null&lt;/code>, &lt;code>NaN&lt;/code> and &lt;code>undefined&lt;/code>.
+            <pre class="prettyprint source linenums"><code>/**
+ * Uses the provided `iteratee` to build a function returning a[`Map`]{@link Map}
+ * with the generated keys and counts as values.&lt;br/>
+ * Like Lamb's [`countBy`]{@link https://ascartabelli.github.io/lamb/module-lamb.html#countBy}
+ * but builds a function returning a [`Map`]{@link Map}.&lt;br/>
+ * Useful to keep the type of the generated keys instead of having them converted to string.
  * @example
- * const obj = { foo: true, bar: false, baz: true };
- * const arr = ["foo", undefined, "", "foo", "baz"];
+ * const persons = [
+ *     { name: "Jane", city: "New York" },
+ *     { name: "John", city: "New York" },
+ *     { name: "Mario", city: "Rome" },
+ *     { name: "Paolo" }
+ * ];
+ * const countByCity = countToMapBy(({ city }) => String(city));
  *
- * makeClassName(obj) // => "foo baz"
- * makeClassName(arr) // => "foo baz"
- * makeClassName({}) // => ""
- * makeClassName([]) // => ""
+ * countByCity(persons) // => Map { "New York" → 2, "Rome" → 1, "undefined" → 1 }
  *
- * @memberof module:@cgnal/utils/string
- * @since 0.1.5
- * @function
- * @param {String[]|Object&lt;String, Boolean>} names
- * @returns {String}
+ * @memberof module:@cgnal/utils/array
+ * @since 0.1.6
+ * @param {Function} iteratee a Lamb [ListIteratorCallback]{@link https://ascartabelli.github.io/lamb/types.html#ListIteratorCallback}
+ * @returns {Function} &lt;code>Object[] => Map&lt;Any, Number>&lt;/code>
  */
-const makeClassName = _.adapter([
-    _.casus(Array.isArray, makeClassNameFromArray),
-    makeClassNameFromObject
-]);
+const countToMapBy = iteratee => arrayLike => {
+    const result = new Map();
 
-export default makeClassName;
+    for (let i = 0, len = arrayLike.length; i &lt; len; i++) {
+        const key = iteratee(arrayLike[i], i, arrayLike);
+
+        result.set(
+            key,
+            result.has(key) ? result.get(key) + 1 : 1
+        );
+    }
+
+    return result;
+};
+
+export default countToMapBy;
 </code></pre>
         </article>
     </section>
