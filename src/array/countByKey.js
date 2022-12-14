@@ -18,7 +18,7 @@ import * as _ from "lamb";
  * @since 0.0.7
  * @function
  * @param {String} key
- * @returns {Function} <code>Object[] => Object<String, Number></code>
+ * @returns {Function} <code>ArrayLike => Object<String, Number></code>
  */
 const countByKey = _.compose(_.countBy, _.getKey);
 
