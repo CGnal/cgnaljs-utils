@@ -75,6 +75,13 @@
  */
 
 /**
+ * The built-in Set object.
+ * @typedef {Set} Set
+ * @global
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set|Set} in Mozilla documentation.
+ */
+
+/**
  * The built-in String object.
  * @typedef {String} String
  * @global

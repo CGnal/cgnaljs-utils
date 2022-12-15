@@ -46,7 +46,7 @@ module.exports = {
         "jsdoc/no-types": 0,
         "jsdoc/no-undefined-types": [
             "error", {
-                "definedTypes": ["ArrayLike", "ListIteratorCallback"]
+                "definedTypes": ["Any", "ArrayLike", "ListIteratorCallback"]
             }
         ],
         "jsdoc/require-description": 0,

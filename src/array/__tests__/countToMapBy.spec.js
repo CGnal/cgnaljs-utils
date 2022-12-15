@@ -1,9 +1,9 @@
 import * as _ from "lamb";
 
+import { ownedToMap } from "../../object";
 import { countToMapBy } from "..";
 
 describe("countToMapBy", () => {
-    const objectToMap = _.compose(pairs => new Map(pairs), _.ownPairs);
     const persons = [
         { name: "Jane", surname: "Doe", age: 12, city: "New York" },
         { name: "John", surname: "Doe", age: 40, city: "New York" },
@@ -11,7 +11,7 @@ describe("countToMapBy", () => {
         { name: "Paolo", surname: "Bianchi", age: 15 }
     ];
 
-    const personsCityCount = objectToMap({
+    const personsCityCount = ownedToMap({
         "New York": 2,
         "Rome": 1,
         "undefined": 1
@@ -24,7 +24,7 @@ describe("countToMapBy", () => {
     });
 
     it("should work with array-like objects", () => {
-        const expected = objectToMap({
+        const expected = ownedToMap({
             "h": 1, "e": 1, "l": 3, "o": 2, " ": 1, "w": 1, "r": 1, "d": 1
         });
 
@@ -37,7 +37,7 @@ describe("countToMapBy", () => {
 
     it("should consider deleted or unassigned indexes in sparse arrays as `undefined` values", () => {
         const arr = [1, , 3, void 0, 5]; // eslint-disable-line no-sparse-arrays
-        const expected = objectToMap({ false: 3, true: 2 });
+        const expected = ownedToMap({ false: 3, true: 2 });
 
         expect(countToMapBy(v => String(v === void 0))(arr)).toStrictEqual(expected);
     });
