@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>src/array/arraySum.js - @cgnal/utils</title>
+    <title>src/object/ownedToMap.js - @cgnal/utils</title>
     
     <meta name="description" content="Common utilities for CGnal's JavaScript projects" />
     
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">src/array/arraySum.js</h1>
+    <h1 class="page-title">src/object/ownedToMap.js</h1>
     
 
     
@@ -50,20 +50,21 @@
             <pre class="prettyprint source linenums"><code>import * as _ from "lamb";
 
 /**
- * Sums the values in the given array.
+ * Builds a {@link Map} from the owned enumerable properties of an object.
  * @example
- * arraySum([1, 2, 3, 4, 5]) // => 15
+ * const person = { name: "Jane", city: "New York" };
  *
- * @memberof module:@cgnal/utils/array
- * @since 0.0.5
+ * ownedToMap(person) // =>  Map { name → "Jane", city → "New York" }
+ *
+ * @memberof module:@cgnal/utils/object
+ * @since 0.2.0
  * @function
- * @param {Number[]} source
- * @throws {TypeError} If the received array is empty.
- * @returns {Number}
+ * @param {Object} source
+ * @returns {Map&lt;String, Any>}
  */
-const arraySum = _.reduceWith(_.sum);
+const ownedToMap = _.compose(pairs => new Map(pairs), _.ownPairs);
 
-export default arraySum;
+export default ownedToMap;
 </code></pre>
         </article>
     </section>

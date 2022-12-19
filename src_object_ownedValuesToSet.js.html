@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>src/array/arraySum.js - @cgnal/utils</title>
+    <title>src/object/ownedValuesToSet.js - @cgnal/utils</title>
     
     <meta name="description" content="Common utilities for CGnal's JavaScript projects" />
     
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">src/array/arraySum.js</h1>
+    <h1 class="page-title">src/object/ownedValuesToSet.js</h1>
     
 
     
@@ -50,20 +50,22 @@
             <pre class="prettyprint source linenums"><code>import * as _ from "lamb";
 
 /**
- * Sums the values in the given array.
+ * Builds a {@link Set} from the values of the owned
+ * enumerable properties of an object.
  * @example
- * arraySum([1, 2, 3, 4, 5]) // => 15
+ * const source = { a: 1, b: 2, c: 1 };
  *
- * @memberof module:@cgnal/utils/array
- * @since 0.0.5
+ * ownedValuesToSet(source) // =>  Set [ 1, 2 ]
+ *
+ * @memberof module:@cgnal/utils/object
+ * @since 0.2.0
  * @function
- * @param {Number[]} source
- * @throws {TypeError} If the received array is empty.
- * @returns {Number}
+ * @param {Object} source
+ * @returns {Set}
  */
-const arraySum = _.reduceWith(_.sum);
+const ownedValuesToSet = _.compose(values => new Set(values), _.ownValues);
 
-export default arraySum;
+export default ownedValuesToSet;
 </code></pre>
         </article>
     </section>
